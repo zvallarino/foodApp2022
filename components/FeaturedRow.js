@@ -9,8 +9,6 @@ const FeaturedRow = ({
   id, title, description
 }) => {
 
-  console.log(id)
-
   const [restaurants,setRestaurants] = useState([])
   useEffect(() => {
     sanityClient.fetch(`
@@ -54,7 +52,7 @@ const FeaturedRow = ({
         title = {restaurant.name}
         rating= {restaurant.rating}
         short_description = {restaurant.short_description}
-        genre = {restaurant.genre}
+        genre = {restaurant?.type.name}
         long = {restaurant.long}
         lat = {restaurant.lat}
         dishes = {restaurant.dishes}
